@@ -4,7 +4,7 @@ const STATS = [
   { stat: "3,569", label: "participants",      detail: "8 cohorts · 4 continents" },
   { stat: "246",   label: "brain ROIs",        detail: "Brainnetome atlas, whole-brain" },
   { stat: "26",    label: "Universal ROIs",     detail: "significant in all 8 cohorts" },
-  { stat: "100",   label: "SFCN models",       detail: "5 folds × 20 seeds ensemble" },
+  { stat: "100",   label: "SFCN models",       detail: "5 folds × 20 repeats ensemble" },
 ];
 
 export default function Abstract() {

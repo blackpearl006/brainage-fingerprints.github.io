@@ -10,7 +10,7 @@ const STEPS = [
   {
     n: "02",
     title: "SFCN ensemble (100 models)",
-    body: "Simple Fully Convolutional Network trained with 5-fold cross-validation × 20 random seeds. LRD (Linear Regression Debiasing) applied post-hoc to correct age-bias in the brain-age gap.",
+    body: "Simple Fully Convolutional Network trained with 5-fold cross-validation × 20 repeats. LRD (Linear Regression Debiasing) applied post-hoc to correct age-bias in the brain-age gap.",
   },
   {
     n: "03",
