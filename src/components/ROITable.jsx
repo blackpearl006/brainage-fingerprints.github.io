@@ -44,7 +44,7 @@ export default function ROITable({ regions, counts, sig, showAll = false, numCoh
             <th className={thCls} onClick={() => toggleSort("id")}>#</th>
             <th className={thCls} onClick={() => toggleSort("label")}>Label</th>
             <th className={thCls} onClick={() => toggleSort("subregion")}>Subregion</th>
-            <th className={thCls} onClick={() => toggleSort("network7")}>Network</th>
+            <th className={thCls} onClick={() => toggleSort("our_network7")}>Network</th>
             <th className={thCls} onClick={() => toggleSort("hemi")}>Hemi</th>
             <th className={thCls + " text-right pr-5"} onClick={() => toggleSort("count")}>
               {isIntersection ? `# Cohorts ↕` : `Count ↕`}
@@ -72,9 +72,9 @@ export default function ROITable({ regions, counts, sig, showAll = false, numCoh
                 <td className={tdCls}>
                   <span
                     className="px-2 py-0.5 rounded-full text-white text-[10px] font-sans whitespace-nowrap"
-                    style={{ background: networkColors[row.network7] ?? "#999" }}
+                    style={{ background: networkColors[row.our_network7] ?? "#999" }}
                   >
-                    {row.network7}
+                    {row.our_network7}
                   </span>
                 </td>
                 <td className={tdCls + " text-ink2 text-center"}>{row.hemi}</td>

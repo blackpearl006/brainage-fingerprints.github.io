@@ -13,28 +13,16 @@ OUT.mkdir(parents=True, exist_ok=True)
 # ── regions.json ─────────────────────────────────────────────
 roi_meta = pd.read_csv(ROOT / "8. others/brainnetome_ours.csv")
 
-# For subcortical regions where Our_7network is "NA", fall back to Our_20network label
-SUBCORTICAL_MAP = {
-    "AmyHip":   "AmyHip",
-    "Striatum":  "Striatum",
-    "Thalamus":  "Thalamus",
-    "AudLang":   "AudLang",
-}
-
 regions = []
 for _, row in roi_meta.iterrows():
-    n7  = str(row["Our_7network"])
-    n20 = str(row["Our_20network"])
-    # Use network20 label when 7-network is unassigned
-    display_net = n7 if n7 != "NA" else SUBCORTICAL_MAP.get(n20, "Subcortical")
     regions.append({
-        "id":        int(row["Index"]),
-        "label":     str(row["Label"]),
-        "subregion": str(row["subregion_name"]),
-        "region":    str(row["region"]),
-        "network7":  display_net,
-        "network20": n20,
-        "hemi":      str(row["hemi"]),
+        "id":           int(row["Index"]),
+        "label":        str(row["Label"]),
+        "subregion":    str(row["subregion_name"]),
+        "region":       str(row["region"]),
+        "our_network7": str(row["Our_7network"]),
+        "our_network20":str(row["Our_20network"]),
+        "hemi":         str(row["hemi"]),
     })
 (OUT / "regions.json").write_text(json.dumps(regions, indent=2))
 print(f"Wrote {len(regions)} regions → regions.json")
