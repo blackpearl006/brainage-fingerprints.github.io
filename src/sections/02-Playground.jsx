@@ -1,6 +1,6 @@
-import { useState, useEffect, Suspense, lazy } from "react";
+import { useState, useEffect, Suspense, lazy, useMemo } from "react";
 import Section from "../components/Section";
-import ControlsSidebar from "../components/ControlsSidebar";
+import FilterBar from "../components/FilterBar";
 import ROITable from "../components/ROITable";
 import GlassBrain from "../components/GlassBrain";
 import { loadRegions, loadFingerprints, byId } from "../lib/data";
@@ -20,68 +20,116 @@ const ANALYSIS_LABELS = {
 function LoadingAtlas() {
   return (
     <div className="h-[480px] bg-ink/10 rounded-lg flex items-center justify-center text-ink2 font-mono text-xs">
-      Loading 3D atlas…
+      <div className="flex items-center gap-2">
+        <div className="w-4 h-4 rounded-full border-2 border-sig border-t-transparent animate-spin"/>
+        Loading 3D atlas…
+      </div>
     </div>
   );
 }
 
-function Panel({ title, tag, analysis, cohort, threshold, view, showAll, regions, fingerprints }) {
-  const data   = fingerprints?.[analysis]?.[cohort]?.[threshold];
-  const counts = data?.counts ?? Array(246).fill(0);
-  const sig    = data?.sig    ?? Array(246).fill(0);
-  const sigCount = sig.filter(v => v === 1).length;
+// Compute intersection counts + significance across multiple cohorts
+function computeIntersectionData(cohorts, fingerprints, analysis, threshold, strict) {
+  if (!fingerprints || cohorts.length === 0) {
+    return { counts: Array(246).fill(0), sig: Array(246).fill(0) };
+  }
 
-  const tagColors = { A: "bg-ink text-paper", B: "bg-sig text-paper" };
+  if (cohorts.length === 1) {
+    const data = fingerprints[analysis]?.[cohorts[0]]?.[threshold];
+    return {
+      counts: data?.counts ?? Array(246).fill(0),
+      sig:    data?.sig    ?? Array(246).fill(0),
+    };
+  }
 
-  return (
-    <div className="flex-1 min-w-0 rounded-xl border border-rule/20 overflow-hidden">
-      {/* Panel header */}
-      <div className="flex items-center gap-3 px-4 py-3 bg-paper border-b border-rule/20">
-        <span className={`font-mono text-[10px] font-bold px-2 py-0.5 rounded ${tagColors[tag]}`}>{tag}</span>
-        <div>
-          <p className="font-sans text-sm font-semibold text-ink leading-tight">{cohort}</p>
-          <p className="font-mono text-[10px] text-ink2">{ANALYSIS_LABELS[analysis]}</p>
-        </div>
-        <span className="ml-auto font-mono text-[10px] text-sig font-bold">{sigCount} sig. ROIs</span>
-      </div>
+  // Multi-cohort: counts = number of cohorts where sig=1
+  const counts = Array(246).fill(0);
+  for (const cohort of cohorts) {
+    const data = fingerprints[analysis]?.[cohort]?.[threshold];
+    if (!data) continue;
+    for (let i = 0; i < 246; i++) {
+      if (data.sig[i] === 1) counts[i]++;
+    }
+  }
 
-      {/* Content */}
-      <div className="p-4">
-        {view === "table" && (
-          <ROITable regions={regions} counts={counts} sig={sig} showAll={showAll}/>
-        )}
-        {view === "2d" && (
-          <GlassBrain
-            src={`/assets/figures/${cohort}_${analysis}.png`}
-            alt={`${cohort} ${ANALYSIS_LABELS[analysis]} fingerprint`}
-            caption={`${cohort} — ${ANALYSIS_LABELS[analysis]} (${threshold.replace(/_rois/,"").replace(/_/g," ")})`}
-          />
-        )}
-        {view === "3d" && (
-          <Suspense fallback={<LoadingAtlas/>}>
-            <BrainnetomeAtlas counts={counts} sig={sig} regions={regions} height={460}/>
-          </Suspense>
-        )}
-      </div>
-    </div>
+  // Significance: strict = must be in ALL cohorts; loose = must be in at least 1
+  const sig = counts.map(c => (strict ? c === cohorts.length : c > 0) ? 1 : 0);
+
+  return { counts, sig };
+}
+
+function ContentView({ view, counts, sig, regions, analysis, selectedCohorts, threshold, numCohorts, showAll }) {
+  const atlas3d = (
+    <Suspense fallback={<LoadingAtlas/>}>
+      <BrainnetomeAtlas counts={counts} sig={sig} regions={regions} height={500} numCohorts={numCohorts}/>
+    </Suspense>
   );
+
+  if (view === "table") {
+    return <ROITable regions={regions} counts={counts} sig={sig} showAll={showAll} numCohorts={numCohorts}/>;
+  }
+
+  if (view === "3d") {
+    return atlas3d;
+  }
+
+  if (view === "2d") {
+    const cohort = selectedCohorts[0] ?? "OASIS3";
+    return (
+      <GlassBrain
+        src={`/assets/figures/${cohort}_${analysis}.png`}
+        alt={`${cohort} ${ANALYSIS_LABELS[analysis]} fingerprint`}
+        caption={`${cohort} — ${ANALYSIS_LABELS[analysis]} (${threshold.replace(/_rois/,"").replace(/_/g," ")})`}
+      />
+    );
+  }
+
+  // split: table left, 3D right
+  if (view === "split") {
+    return (
+      <div className="grid lg:grid-cols-2 gap-4">
+        <div>
+          <p className="font-mono text-[10px] text-ink2 uppercase tracking-wider mb-2">ROI Table</p>
+          <ROITable regions={regions} counts={counts} sig={sig} showAll={showAll} numCohorts={numCohorts}/>
+        </div>
+        <div>
+          <p className="font-mono text-[10px] text-ink2 uppercase tracking-wider mb-2">3D Brain</p>
+          {atlas3d}
+        </div>
+      </div>
+    );
+  }
+
+  return null;
 }
 
 export default function Playground() {
-  const [analysis,     setAnalysis]     = useState("main");
-  const [cohortA,      setCohortA]      = useState("OASIS3");
-  const [cohortB,      setCohortB]      = useState("ADNI");
-  const [compareMode,  setCompareMode]  = useState(false);
-  const [threshold,    setThreshold]    = useState("top_20_perc_rois");
-  const [view,         setView]         = useState("table");
-  const [showAll,      setShowAll]      = useState(false);
-  const [regions,      setRegions]      = useState(null);
-  const [fingerprints, setFingerprints] = useState(null);
+  const [analysis,          setAnalysis]          = useState("main");
+  const [selectedCohorts,   setSelectedCohorts]   = useState(["OASIS3"]);
+  const [threshold,         setThreshold]         = useState("top_20_perc_rois");
+  const [view,              setView]              = useState("table");
+  const [showAll,           setShowAll]           = useState(false);
+  const [strictIntersection, setStrictIntersection] = useState(true);
+  const [regions,           setRegions]           = useState(null);
+  const [fingerprints,      setFingerprints]      = useState(null);
 
   useEffect(() => {
     loadRegions().then(r => setRegions(byId(r)));
     loadFingerprints().then(setFingerprints);
   }, []);
+
+  const { counts, sig } = useMemo(
+    () => computeIntersectionData(selectedCohorts, fingerprints, analysis, threshold, strictIntersection),
+    [selectedCohorts, fingerprints, analysis, threshold, strictIntersection]
+  );
+
+  const sigCount = sig.filter(v => v === 1).length;
+  const isMulti  = selectedCohorts.length > 1;
+  const numCohorts = selectedCohorts.length;
+
+  const cohortLabel = isMulti
+    ? `∩ ${selectedCohorts.join(" · ")}`
+    : selectedCohorts[0] ?? "—";
 
   if (!regions || !fingerprints) {
     return (
@@ -99,48 +147,77 @@ export default function Playground() {
       id="playground"
       eyebrow="Explore"
       title="Fingerprint Playground"
-      lede="Which brain regions drive brain-age predictions? Toggle analysis type, cohort, threshold, and view mode. Significant ROIs pass a binomial test at the chosen top-N% threshold."
+      lede="Which brain regions drive brain-age predictions? Select a single cohort or multiple cohorts to compute their intersection. Significant ROIs pass a binomial test at the chosen top-N% threshold."
     >
-      <div className="flex gap-5 items-start">
-        {/* Panels */}
-        <div className={`flex-1 min-w-0 flex gap-4 ${compareMode ? "flex-row items-start" : "flex-col"}`}>
-          <Panel
-            title={`${cohortA} — ${ANALYSIS_LABELS[analysis]}`}
-            tag="A"
-            analysis={analysis}
-            cohort={cohortA}
-            threshold={threshold}
-            view={view}
-            showAll={showAll}
-            regions={regions}
-            fingerprints={fingerprints}
-          />
-          {compareMode && (
-            <Panel
-              title={`${cohortB} — ${ANALYSIS_LABELS[analysis]}`}
-              tag="B"
-              analysis={analysis}
-              cohort={cohortB}
-              threshold={threshold}
-              view={view}
-              showAll={showAll}
-              regions={regions}
-              fingerprints={fingerprints}
-            />
-          )}
+      {/* Filter bar */}
+      <FilterBar
+        analysis={analysis}               setAnalysis={setAnalysis}
+        selectedCohorts={selectedCohorts} setSelectedCohorts={setSelectedCohorts}
+        threshold={threshold}             setThreshold={setThreshold}
+        view={view}                       setView={setView}
+        showAll={showAll}                 setShowAll={setShowAll}
+        strictIntersection={strictIntersection} setStrictIntersection={setStrictIntersection}
+      />
+
+      {/* Result panel */}
+      <div className="rounded-xl border border-rule/20 overflow-hidden">
+        {/* Panel header */}
+        <div className="flex flex-wrap items-center gap-3 px-5 py-3 bg-paper border-b border-rule/20">
+          <div className="flex-1 min-w-0">
+            <p className="font-sans text-sm font-semibold text-ink leading-tight truncate">
+              {ANALYSIS_LABELS[analysis]}
+              {isMulti && (
+                <span className="ml-2 text-[11px] font-mono font-normal text-sig">
+                  — {strictIntersection ? "strict" : "loose"} intersection
+                </span>
+              )}
+            </p>
+            <p className="font-mono text-[10px] text-ink2 mt-0.5 truncate">{cohortLabel}</p>
+          </div>
+
+          {/* Sig count badge */}
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-[10px] text-ink2">Significant ROIs</span>
+            <span className="font-mono text-sm font-bold text-sig tabular-nums">{sigCount}</span>
+          </div>
+
+          {/* Threshold badge */}
+          <span className="font-mono text-[10px] px-2.5 py-1 rounded-full bg-paper2 border border-rule/20 text-ink2">
+            {threshold.replace("_rois","").replace(/_/g," ")}
+          </span>
         </div>
 
-        {/* Right-side controls */}
-        <ControlsSidebar
-          analysis={analysis}       setAnalysis={setAnalysis}
-          cohortA={cohortA}         setCohortA={setCohortA}
-          cohortB={cohortB}         setCohortB={setCohortB}
-          compareMode={compareMode} setCompareMode={setCompareMode}
-          threshold={threshold}     setThreshold={setThreshold}
-          view={view}               setView={setView}
-          showAll={showAll}         setShowAll={setShowAll}
-        />
+        {/* Content */}
+        <div className="p-5">
+          <ContentView
+            view={view}
+            counts={counts}
+            sig={sig}
+            regions={regions}
+            analysis={analysis}
+            selectedCohorts={selectedCohorts}
+            threshold={threshold}
+            numCohorts={numCohorts}
+            showAll={showAll}
+          />
+        </div>
       </div>
+
+      {/* Intersection summary chips (multi-cohort mode) */}
+      {isMulti && sigCount > 0 && (
+        <div className="mt-4 p-4 bg-paper2 rounded-xl border border-rule/20">
+          <p className="font-mono text-[11px] text-ink2 mb-2">
+            <span className="text-sig font-bold">{sigCount} ROIs</span>
+            {" "}significant in{" "}
+            {strictIntersection ? "all" : "at least one of"}{" "}
+            {numCohorts} selected cohort{numCohorts !== 1 ? "s" : ""}
+            {strictIntersection && ` (${selectedCohorts.join(", ")})`}
+          </p>
+          <p className="font-mono text-[10px] text-ink2/60">
+            Toggle strict/loose intersection in Options · Switch to 3D or Table+3D view for spatial context
+          </p>
+        </div>
+      )}
     </Section>
   );
 }

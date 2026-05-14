@@ -10,13 +10,14 @@ function hexToThree(hex) {
   return new THREE.Color(hex);
 }
 
-function AtlasScene({ counts, sig, regions, onHover, colorMode }) {
+function AtlasScene({ counts, sig, regions, onHover, colorMode, numCohorts }) {
   const { scene: gltfScene } = useGLTF("/assets/meshes/atlas.glb");
   const groupRef = useRef(null);
   const [highlight, setHighlight] = useState(null);
   const meshMapRef = useRef({});
 
-  const maxCount = counts ? Math.max(1, ...counts) : 1;
+  // In intersection mode, max is numCohorts; otherwise max of count array
+  const maxCount = numCohorts > 1 ? numCohorts : (counts ? Math.max(1, ...counts) : 1);
 
   // Clone scene once
   useEffect(() => {
@@ -106,7 +107,7 @@ function AtlasScene({ counts, sig, regions, onHover, colorMode }) {
   );
 }
 
-export default function BrainnetomeAtlas({ counts, sig, regions, height = 480, colorMode = "count" }) {
+export default function BrainnetomeAtlas({ counts, sig, regions, height = 480, colorMode = "count", numCohorts = 1 }) {
   const [tooltip, setTooltip] = useState(null);
   const containerRef = useRef(null);
 
@@ -133,6 +134,7 @@ export default function BrainnetomeAtlas({ counts, sig, regions, height = 480, c
             regions={regions}
             onHover={handleHover}
             colorMode={colorMode}
+            numCohorts={numCohorts}
           />
         </Suspense>
         <OrbitControls enablePan={false} minDistance={120} maxDistance={600} autoRotate autoRotateSpeed={0.4}/>
@@ -143,12 +145,11 @@ export default function BrainnetomeAtlas({ counts, sig, regions, height = 480, c
 
       {/* Legend */}
       <div className="absolute bottom-3 left-3 flex items-center gap-2 bg-ink/60 backdrop-blur-sm rounded-lg px-3 py-1.5">
-        <span className="font-mono text-[10px] text-paper/60">low</span>
+        <span className="font-mono text-[10px] text-paper/60">{numCohorts > 1 ? "1 cohort" : "low"}</span>
         <div className="w-20 h-2 rounded-full" style={{
           background: `linear-gradient(to right, ${sequentialColor(0)}, ${sequentialColor(0.5)}, ${sequentialColor(1)})`
         }}/>
-        <span className="font-mono text-[10px] text-paper/60">high</span>
-        <span className="font-mono text-[10px] text-paper/40 ml-2">count / {maxCount}</span>
+        <span className="font-mono text-[10px] text-paper/60">{numCohorts > 1 ? `${maxCount} cohorts` : "high"}</span>
       </div>
 
       {/* Sig count badge */}
@@ -172,7 +173,7 @@ export default function BrainnetomeAtlas({ counts, sig, regions, height = 480, c
           <div className="mt-1.5 space-y-0.5 text-[11px]">
             <p>Network: <span className="text-accent">{tooltip.data.network7}</span></p>
             <p>Hemisphere: <span className="text-paper/80">{tooltip.data.hemi}</span></p>
-            <p>Count: <span className="font-bold text-paper">{tooltip.data.count}</span></p>
+            <p>{numCohorts > 1 ? "Cohorts" : "Count"}: <span className="font-bold text-paper">{tooltip.data.count}{numCohorts > 1 ? ` / ${numCohorts}` : ""}</span></p>
             <p>Significant: {tooltip.data.isSig
               ? <span className="text-sig font-bold">Yes ✓</span>
               : <span className="text-paper/40">No</span>
