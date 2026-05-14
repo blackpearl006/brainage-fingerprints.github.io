@@ -3,7 +3,7 @@ import Section from "../components/Section";
 import FilterBar from "../components/FilterBar";
 import ROITable from "../components/ROITable";
 import GlassBrain from "../components/GlassBrain";
-import { loadRegions, loadFingerprints, byId } from "../lib/data";
+import { loadRegions, loadFingerprintAnalysis, byId } from "../lib/data";
 
 const BrainnetomeAtlas = lazy(() => import("../components/BrainnetomeAtlas"));
 
@@ -108,7 +108,7 @@ function ContentView({ view, counts, sig, regions, analysis, selectedCohorts, th
     const cohort = selectedCohorts[0] ?? "OASIS3";
     return (
       <GlassBrain
-        src={`/assets/figures/${cohort}_${analysis}.png`}
+        src={`${import.meta.env.BASE_URL}assets/figures/${cohort}_${analysis}.png`}
         alt={`${cohort} ${ANALYSIS_LABELS[analysis]} fingerprint`}
         caption={`${cohort} — ${ANALYSIS_LABELS[analysis]} · ${THRESHOLD_LABELS[threshold]}`}
       />
@@ -139,14 +139,25 @@ export default function Playground() {
   const [showAll,           setShowAll]           = useState(DEFAULT_STATE.showAll);
   const [strictIntersection, setStrictIntersection] = useState(DEFAULT_STATE.strictIntersection);
   const [regions,           setRegions]           = useState(null);
-  const [fingerprints,      setFingerprints]      = useState(null);
+  const [fingerprintCache,  setFingerprintCache]  = useState({});
   const [toast,             setToast]             = useState(null);
   const toastTimer = useRef(null);
 
   useEffect(() => {
     loadRegions().then(r => setRegions(byId(r)));
-    loadFingerprints().then(setFingerprints);
+    loadFingerprintAnalysis("main").then(data =>
+      setFingerprintCache(c => ({ ...c, main: data }))
+    );
   }, []);
+
+  useEffect(() => {
+    if (fingerprintCache[analysis]) return;
+    loadFingerprintAnalysis(analysis).then(data =>
+      setFingerprintCache(c => ({ ...c, [analysis]: data }))
+    );
+  }, [analysis]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const fingerprints = fingerprintCache[analysis] ? { [analysis]: fingerprintCache[analysis] } : null;
 
   // Toast helper
   const showToast = useCallback((msg) => {
@@ -176,6 +187,8 @@ export default function Playground() {
     showToast("Reset to default — Main Study · All 8 cohorts · strict ∩ · Top 20%");
   }
 
+  const analysisLoading = !fingerprints;
+
   const { counts, sig } = useMemo(
     () => computeIntersectionData(selectedCohorts, fingerprints, analysis, threshold, strictIntersection),
     [selectedCohorts, fingerprints, analysis, threshold, strictIntersection],
@@ -189,7 +202,7 @@ export default function Playground() {
     ? `${selectedCohorts.length === 8 ? "All 8 cohorts" : selectedCohorts.join(" · ")}`
     : selectedCohorts[0] ?? "—";
 
-  if (!regions || !fingerprints) {
+  if (!regions || !fingerprintCache.main) {
     return (
       <section className="max-w-wide mx-auto px-6 py-16">
         <div className="flex items-center gap-3">
@@ -269,7 +282,15 @@ export default function Playground() {
         </div>
 
         {/* Content */}
-        <div className="p-5">
+        <div className="p-5 relative">
+          {analysisLoading && (
+            <div className="absolute inset-0 flex items-center justify-center bg-paper/70 z-10 rounded-b-xl">
+              <div className="flex items-center gap-2 text-ink2 font-mono text-xs">
+                <div className="w-3 h-3 rounded-full border-2 border-sig border-t-transparent animate-spin"/>
+                Loading {ANALYSIS_LABELS[analysis]}…
+              </div>
+            </div>
+          )}
           <ContentView
             view={view} counts={counts} sig={sig} regions={regions}
             analysis={analysis} selectedCohorts={selectedCohorts}

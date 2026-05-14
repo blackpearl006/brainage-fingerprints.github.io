@@ -4,7 +4,7 @@ import { OrbitControls, useGLTF, GizmoHelper, GizmoViewport, Text } from "@react
 import * as THREE from "three";
 import { sequentialColor, palette, networkColors } from "../lib/theme";
 
-useGLTF.preload("/assets/meshes/atlas.glb");
+useGLTF.preload(`${import.meta.env.BASE_URL}assets/meshes/atlas.glb`);
 
 const BG = "#141E2D";
 
@@ -59,7 +59,7 @@ function OrientationLabels() {
 }
 
 function AtlasScene({ counts, sig, regions, onHover, colorMode, shellOpacity, numCohorts }) {
-  const { scene: gltfScene } = useGLTF("/assets/meshes/atlas.glb");
+  const { scene: gltfScene } = useGLTF(`${import.meta.env.BASE_URL}assets/meshes/atlas.glb`);
   const groupRef   = useRef(null);
   const meshMapRef = useRef({});
   const [highlight, setHighlight] = useState(null);
