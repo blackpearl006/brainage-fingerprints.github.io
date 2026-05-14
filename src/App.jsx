@@ -1,6 +1,7 @@
 import Hero       from "./sections/00-Hero";
 import Abstract   from "./sections/01-Abstract";
 import Playground from "./sections/02-Playground";
+import Comparisons from "./sections/03-Comparisons";
 import Methods    from "./sections/03-Methods";
 import Resources  from "./sections/04-Resources";
 
@@ -16,6 +17,8 @@ export default function App() {
       <Abstract/>
       <HR/>
       <Playground/>
+      <HR/>
+      <Comparisons/>
       <HR/>
       <Methods/>
       <HR/>
