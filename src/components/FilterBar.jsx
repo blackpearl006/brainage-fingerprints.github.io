@@ -83,7 +83,6 @@ export default function FilterBar({
   threshold, setThreshold,
   view, setView,
   showAll, setShowAll,
-  strictIntersection, setStrictIntersection,
 }) {
   const [open, setOpen] = useState(null); // 'analysis' | 'cohorts' | 'threshold' | 'view' | 'options'
   const barRef = useRef(null);
@@ -269,13 +268,9 @@ export default function FilterBar({
               <span className="text-ink2 text-[10px]">Include non-significant ROIs in the table</span>
             </span>
           </label>
-          <label className="flex items-center gap-3 cursor-pointer py-2 border-t border-rule/20 mt-1">
-            <input type="checkbox" checked={strictIntersection} onChange={e => setStrictIntersection(e.target.checked)} className="accent-sig w-4 h-4"/>
-            <span className="font-mono text-xs text-ink">
-              <span className="font-semibold block">Strict intersection</span>
-              <span className="text-ink2 text-[10px]">ROI must be significant in ALL selected cohorts (vs any)</span>
-            </span>
-          </label>
+          <p className="mt-2 font-mono text-[10px] text-ink2/60 border-t border-rule/20 pt-2">
+            Strict / Loose intersection toggle is available in the panel header when multiple cohorts are selected.
+          </p>
         </Panel>
       )}
     </div>
