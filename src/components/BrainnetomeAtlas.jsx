@@ -106,7 +106,8 @@ function AtlasScene({ counts, sig, regions, onHover, colorMode, shellOpacity, nu
           hex = palette.accent;
         } else if (colorMode === "network") {
           const r = regions?.get(id);
-          hex = networkColors[r?.network7] ?? networkColors.NA;
+          const net = (r?.network7 === "nan" ? r?.network20 : r?.network7);
+          hex = networkColors[net] ?? networkColors.NA;
         } else {
           hex = sequentialColor(maxCount > 0 ? count / maxCount : 0);
         }
@@ -331,9 +332,9 @@ export default function BrainnetomeAtlas({ counts, sig, regions, height = 500, n
             </div>
             <span
               className="flex-shrink-0 px-2 py-0.5 rounded-full text-white text-[10px] font-bold font-sans whitespace-nowrap"
-              style={{ background: networkColors[tooltip.data.network7] ?? networkColors.NA }}
+              style={{ background: networkColors[tooltip.data.network7 === "nan" ? tooltip.data.network20 : tooltip.data.network7] ?? networkColors.NA }}
             >
-              {tooltip.data.network7}
+              {tooltip.data.network7 === "nan" ? tooltip.data.network20 : tooltip.data.network7}
             </span>
           </div>
 
