@@ -3,8 +3,8 @@ import Section from "../components/Section";
 const STATS = [
   { stat: "3,569", label: "participants",      detail: "8 cohorts · 4 continents" },
   { stat: "246",   label: "brain ROIs",        detail: "Brainnetome atlas, whole-brain" },
-  { stat: "26",    label: "universal markers", detail: "significant in all 8 cohorts" },
-  { stat: "50",    label: "SFCN models",       detail: "5 folds × 10 repeats ensemble" },
+  { stat: "26",    label: "Universal ROIs",     detail: "significant in all 8 cohorts" },
+  { stat: "100",   label: "SFCN models",       detail: "5 folds × 20 seeds ensemble" },
 ];
 
 export default function Abstract() {
@@ -12,7 +12,7 @@ export default function Abstract() {
     <Section
       eyebrow="Study"
       title="What we found"
-      lede="Twenty-six ROIs emerge as universal brain-age biomarkers across all 8 cohorts. Population-specific patterns reveal distinct ageing signatures, with marked differences in East Asian and Latin American brains when trained on Caucasian-only data."
+      lede="Twenty-six Universal ROIs emerge as consistent brain-age predictors across all 8 cohorts. Population-specific patterns reveal distinct ageing signatures, with marked differences in East Asian and Latin American brains when trained on Caucasian-only data."
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
         {STATS.map(s => (
@@ -28,7 +28,7 @@ export default function Abstract() {
         <div>
           <h3 className="font-sans font-semibold text-ink text-lg mb-2">Cross-sectional fingerprints</h3>
           <p>
-            Using Integrated Gradients on an ensemble of 50 SFCN models, we identify which Brainnetome ROIs most strongly influence brain-age predictions per subject, then aggregate across subjects within each cohort to produce cohort-specific fingerprints.
+            Using Integrated Gradients on an ensemble of 100 SFCN models, we identify which Brainnetome ROIs most strongly influence brain-age predictions per subject, then aggregate across subjects within each cohort to produce cohort-specific fingerprints.
           </p>
         </div>
         <div>

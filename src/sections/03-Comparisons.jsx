@@ -283,23 +283,9 @@ function DatasetSpecificView({ allData, threshold, regions }) {
         </div>
       ) : (
         <>
-          {/* Universal ROIs strip */}
-          <div className="rounded-xl border border-rule/20 overflow-hidden mb-4">
-            <div className="px-4 py-2.5 bg-[#1A2332] flex items-center justify-between">
-              <span className="font-mono text-[11px] font-bold text-paper">Universal ROIs — significant in all 8 cohorts</span>
-              <span className="font-mono text-xs font-bold text-sig">{univIds.length} ROIs</span>
-            </div>
-            <div className="p-3 bg-paper2">
-              {univIds.length === 0
-                ? <p className="font-mono text-[10px] text-ink2 italic">None at this threshold</p>
-                : <div className="flex flex-wrap gap-1">{univIds.map(id => <RoiChip key={id} id={id} regions={regions}/>)}</div>
-              }
-            </div>
-          </div>
-
           {/* Per-cohort dataset-specific ROIs */}
           <p className="font-mono text-[11px] text-ink2 uppercase tracking-wider mb-3">
-            Dataset-specific — significant in this cohort but not universal
+            Dataset-specific — significant in this cohort but not in all 8 cohorts
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {ALL_COHORTS.map(cohort => {
