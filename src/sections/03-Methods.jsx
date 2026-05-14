@@ -9,13 +9,13 @@ const STEPS = [
   },
   {
     n: "02",
-    title: "SFCN ensemble (50 models)",
-    body: "Simple Fully Convolutional Network trained with 5-fold cross-validation × 10 random seeds. LRD (Linear Regression Debiasing) applied post-hoc to correct age-bias in the brain-age gap.",
+    title: "SFCN ensemble (100 models)",
+    body: "Simple Fully Convolutional Network trained with 5-fold cross-validation × 20 random seeds. LRD (Linear Regression Debiasing) applied post-hoc to correct age-bias in the brain-age gap.",
   },
   {
     n: "03",
     title: "Integrated Gradients attribution",
-    body: "IG attributes each voxel's contribution to the predicted brain age, using a zero-filled (black) baseline. Attributions are sign-preserved and averaged across the 50-model ensemble per subject.",
+    body: "IG attributes each voxel's contribution to the predicted brain age, using a zero-filled (black) baseline. Attributions are sign-preserved and averaged across the 100-model ensemble per subject.",
   },
   {
     n: "04",
