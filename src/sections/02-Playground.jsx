@@ -4,6 +4,7 @@ import FilterBar from "../components/FilterBar";
 import ROITable from "../components/ROITable";
 import GlassBrain from "../components/GlassBrain";
 import { loadRegions, loadFingerprintAnalysis, byId } from "../lib/data";
+import NetworkRadar from "../components/NetworkRadar";
 
 const BrainnetomeAtlas = lazy(() => import("../components/BrainnetomeAtlas"));
 
@@ -97,7 +98,7 @@ function Atlas3D({ counts, sig, regions, numCohorts, height = 500 }) {
   );
 }
 
-function ContentView({ view, counts, sig, regions, analysis, selectedCohorts, threshold, numCohorts, showAll }) {
+function ContentView({ view, counts, sig, regions, analysis, selectedCohorts, threshold, numCohorts, showAll, analysisData }) {
   if (view === "table") {
     return <ROITable regions={regions} counts={counts} sig={sig} showAll={showAll} numCohorts={numCohorts}/>;
   }
@@ -124,6 +125,12 @@ function ContentView({ view, counts, sig, regions, analysis, selectedCohorts, th
       <div>
         <p className="font-mono text-[10px] text-ink2 uppercase tracking-wider mb-2">3D Brain</p>
         <Atlas3D counts={counts} sig={sig} regions={regions} numCohorts={numCohorts} height={520}/>
+        <NetworkRadar
+          analysisData={analysisData}
+          selectedCohorts={selectedCohorts}
+          threshold={threshold}
+          regions={regions}
+        />
       </div>
     </div>
   );
@@ -295,6 +302,7 @@ export default function Playground() {
             view={view} counts={counts} sig={sig} regions={regions}
             analysis={analysis} selectedCohorts={selectedCohorts}
             threshold={threshold} numCohorts={numCohorts} showAll={showAll}
+            analysisData={fingerprintCache[analysis]}
           />
         </div>
       </div>
