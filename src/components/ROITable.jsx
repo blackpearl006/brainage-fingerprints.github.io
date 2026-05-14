@@ -72,9 +72,9 @@ export default function ROITable({ regions, counts, sig, showAll = false, numCoh
                 <td className={tdCls}>
                   <span
                     className="px-2 py-0.5 rounded-full text-white text-[10px] font-sans whitespace-nowrap"
-                    style={{ background: networkColors[row.our_network7] ?? "#999" }}
+                    style={{ background: networkColors[row.our_network7 === "nan" ? row.our_network20 : row.our_network7] ?? "#999" }}
                   >
-                    {row.our_network7}
+                    {row.our_network7 === "nan" ? row.our_network20 : row.our_network7}
                   </span>
                 </td>
                 <td className={tdCls + " text-ink2 text-center"}>{row.hemi}</td>
