@@ -1,0 +1,2216 @@
+[
+  {
+    "id": 1,
+    "label": "A8m_L",
+    "subregion": "A8m",
+    "region": "SFG_L_7_1",
+    "our_network7": "Frontoparietal",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 2,
+    "label": "A8m_R",
+    "subregion": "A8m",
+    "region": "SFG_R_7_1",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 3,
+    "label": "A8dl_L",
+    "subregion": "A8dl",
+    "region": "SFG_L_7_2",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "L"
+  },
+  {
+    "id": 4,
+    "label": "A8dl_R",
+    "subregion": "A8dl",
+    "region": "SFG_R_7_2",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 5,
+    "label": "A9l_L",
+    "subregion": "A9l",
+    "region": "SFG_L_7_3",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 6,
+    "label": "A9l_R",
+    "subregion": "A9l",
+    "region": "SFG_R_7_3",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 7,
+    "label": "A6dl_L",
+    "subregion": "A6dl",
+    "region": "SFG_L_7_4",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 8,
+    "label": "A6dl_R",
+    "subregion": "A6dl",
+    "region": "SFG_R_7_4",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 9,
+    "label": "A6m_L",
+    "subregion": "A6m",
+    "region": "SFG_L_7_5",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "L"
+  },
+  {
+    "id": 10,
+    "label": "A6m_R",
+    "subregion": "A6m",
+    "region": "SFG_R_7_5",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "R"
+  },
+  {
+    "id": 11,
+    "label": "A9m_L",
+    "subregion": "A9m",
+    "region": "SFG_L_7_6",
+    "our_network7": "Default",
+    "our_network20": "FPN-3",
+    "hemi": "L"
+  },
+  {
+    "id": 12,
+    "label": "A9m_R",
+    "subregion": "A9m",
+    "region": "SFG_R_7_6",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 13,
+    "label": "A10m_L",
+    "subregion": "A10m",
+    "region": "SFG_L_7_7",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "L"
+  },
+  {
+    "id": 14,
+    "label": "A10m_R",
+    "subregion": "A10m",
+    "region": "SFG_R_7_7",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "R"
+  },
+  {
+    "id": 15,
+    "label": "A9/46d_L",
+    "subregion": "A9/46d",
+    "region": "MFG_L_7_1",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 16,
+    "label": "A9/46d_R",
+    "subregion": "A9/46d",
+    "region": "MFG_R_7_1",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-1",
+    "hemi": "R"
+  },
+  {
+    "id": 17,
+    "label": "IFJ_L",
+    "subregion": "IFJ",
+    "region": "MFG_L_7_2",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 18,
+    "label": "IFJ_R",
+    "subregion": "IFJ",
+    "region": "MFG_R_7_2",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 19,
+    "label": "A46_L",
+    "subregion": "A46",
+    "region": "MFG_L_7_3",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "L"
+  },
+  {
+    "id": 20,
+    "label": "A46_R",
+    "subregion": "A46",
+    "region": "MFG_R_7_3",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 21,
+    "label": "A9/46v_L",
+    "subregion": "A9/46v",
+    "region": "MFG_L_7_4",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 22,
+    "label": "A9/46v_R",
+    "subregion": "A9/46v",
+    "region": "MFG_R_7_4",
+    "our_network7": "Frontoparietal",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 23,
+    "label": "A8vl_L",
+    "subregion": "A8vl",
+    "region": "MFG_L_7_5",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "L"
+  },
+  {
+    "id": 24,
+    "label": "A8vl_R",
+    "subregion": "A8vl",
+    "region": "MFG_R_7_5",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 25,
+    "label": "A6vl_L",
+    "subregion": "A6vl",
+    "region": "MFG_L_7_6",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 26,
+    "label": "A6vl_R",
+    "subregion": "A6vl",
+    "region": "MFG_R_7_6",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "FPN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 27,
+    "label": "A10l_L",
+    "subregion": "A10l",
+    "region": "MFG_L_7_7",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-1",
+    "hemi": "L"
+  },
+  {
+    "id": 28,
+    "label": "A10l_R",
+    "subregion": "A10l",
+    "region": "MFG_R_7_7",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 29,
+    "label": "A44d_L",
+    "subregion": "A44d",
+    "region": "IFG_L_6_1",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 30,
+    "label": "A44d_R",
+    "subregion": "A44d",
+    "region": "IFG_R_6_1",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "FPN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 31,
+    "label": "IFS_L",
+    "subregion": "IFS",
+    "region": "IFG_L_6_2",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 32,
+    "label": "IFS_R",
+    "subregion": "IFS",
+    "region": "IFG_R_6_2",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 33,
+    "label": "A45c_L",
+    "subregion": "A45c",
+    "region": "IFG_L_6_3",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 34,
+    "label": "A45c_R",
+    "subregion": "A45c",
+    "region": "IFG_R_6_3",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 35,
+    "label": "A45r_L",
+    "subregion": "A45r",
+    "region": "IFG_L_6_4",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 36,
+    "label": "A45r_R",
+    "subregion": "A45r",
+    "region": "IFG_R_6_4",
+    "our_network7": "Frontoparietal",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 37,
+    "label": "A44op_L",
+    "subregion": "A44op",
+    "region": "IFG_L_6_5",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 38,
+    "label": "A44op_R",
+    "subregion": "A44op",
+    "region": "IFG_R_6_5",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 39,
+    "label": "A44v_L",
+    "subregion": "A44v",
+    "region": "IFG_L_6_6",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 40,
+    "label": "A44v_R",
+    "subregion": "A44v",
+    "region": "IFG_R_6_6",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 41,
+    "label": "A14m_L",
+    "subregion": "A14m",
+    "region": "OrG_L_6_1",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "L"
+  },
+  {
+    "id": 42,
+    "label": "A14m_R",
+    "subregion": "A14m",
+    "region": "OrG_R_6_1",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "R"
+  },
+  {
+    "id": 43,
+    "label": "A12/47o_L",
+    "subregion": "A12/47o",
+    "region": "OrG_L_6_2",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 44,
+    "label": "A12/47o_R",
+    "subregion": "A12/47o",
+    "region": "OrG_R_6_2",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 45,
+    "label": "A11l_L",
+    "subregion": "A11l",
+    "region": "OrG_L_6_3",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-1",
+    "hemi": "L"
+  },
+  {
+    "id": 46,
+    "label": "A11l_R",
+    "subregion": "A11l",
+    "region": "OrG_R_6_3",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 47,
+    "label": "A11m_L",
+    "subregion": "A11m",
+    "region": "OrG_L_6_4",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-1",
+    "hemi": "L"
+  },
+  {
+    "id": 48,
+    "label": "A11m_R",
+    "subregion": "A11m",
+    "region": "OrG_R_6_4",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-1",
+    "hemi": "R"
+  },
+  {
+    "id": 49,
+    "label": "A13_L",
+    "subregion": "A13",
+    "region": "OrG_L_6_5",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-1",
+    "hemi": "L"
+  },
+  {
+    "id": 50,
+    "label": "A13_R",
+    "subregion": "A13",
+    "region": "OrG_R_6_5",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-1",
+    "hemi": "R"
+  },
+  {
+    "id": 51,
+    "label": "A12/47l_L",
+    "subregion": "A12/47l",
+    "region": "OrG_L_6_6",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 52,
+    "label": "A12/47l_R",
+    "subregion": "A12/47l",
+    "region": "OrG_R_6_6",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 53,
+    "label": "A4hf_L",
+    "subregion": "A4hf",
+    "region": "PrG_L_6_1",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "L"
+  },
+  {
+    "id": 54,
+    "label": "A4hf_R",
+    "subregion": "A4hf",
+    "region": "PrG_R_6_1",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "R"
+  },
+  {
+    "id": 55,
+    "label": "A6cdl_L",
+    "subregion": "A6cdl",
+    "region": "PrG_L_6_2",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 56,
+    "label": "A6cdl_R",
+    "subregion": "A6cdl",
+    "region": "PrG_R_6_2",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 57,
+    "label": "A4ul_L",
+    "subregion": "A4ul",
+    "region": "PrG_L_6_3",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "L"
+  },
+  {
+    "id": 58,
+    "label": "A4ul_R",
+    "subregion": "A4ul",
+    "region": "PrG_R_6_3",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "R"
+  },
+  {
+    "id": 59,
+    "label": "A4t_L",
+    "subregion": "A4t",
+    "region": "PrG_L_6_4",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "L"
+  },
+  {
+    "id": 60,
+    "label": "A4t_R",
+    "subregion": "A4t",
+    "region": "PrG_R_6_4",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "R"
+  },
+  {
+    "id": 61,
+    "label": "A4tl_L",
+    "subregion": "A4tl",
+    "region": "PrG_L_6_5",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 62,
+    "label": "A4tl_R",
+    "subregion": "A4tl",
+    "region": "PrG_R_6_5",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 63,
+    "label": "A6cvl_L",
+    "subregion": "A6cvl",
+    "region": "PrG_L_6_6",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "FPN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 64,
+    "label": "A6cvl_R",
+    "subregion": "A6cvl",
+    "region": "PrG_R_6_6",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "FPN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 65,
+    "label": "A1/2/3ll_L",
+    "subregion": "A1/2/3ll",
+    "region": "PCL_L_2_1",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 66,
+    "label": "A1/2/3ll_R",
+    "subregion": "A1/2/3ll",
+    "region": "PCL_R_2_1",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "R"
+  },
+  {
+    "id": 67,
+    "label": "A4ll_L",
+    "subregion": "A4ll",
+    "region": "PCL_L_2_2",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "L"
+  },
+  {
+    "id": 68,
+    "label": "A4ll_R",
+    "subregion": "A4ll",
+    "region": "PCL_R_2_2",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "R"
+  },
+  {
+    "id": 69,
+    "label": "A38m_L",
+    "subregion": "A38m",
+    "region": "STG_L_6_1",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "L"
+  },
+  {
+    "id": 70,
+    "label": "A38m_R",
+    "subregion": "A38m",
+    "region": "STG_R_6_1",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "R"
+  },
+  {
+    "id": 71,
+    "label": "A41/42_L",
+    "subregion": "A41/42",
+    "region": "STG_L_6_2",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "L"
+  },
+  {
+    "id": 72,
+    "label": "A41/42_R",
+    "subregion": "A41/42",
+    "region": "STG_R_6_2",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "R"
+  },
+  {
+    "id": 73,
+    "label": "TE1.0/TE1.2_L",
+    "subregion": "TE1.0/TE1.2",
+    "region": "STG_L_6_3",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "L"
+  },
+  {
+    "id": 74,
+    "label": "TE1.0/TE1.2_R",
+    "subregion": "TE1.0/TE1.2",
+    "region": "STG_R_6_3",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "R"
+  },
+  {
+    "id": 75,
+    "label": "A22c_L",
+    "subregion": "A22c",
+    "region": "STG_L_6_4",
+    "our_network7": "Somatomotor",
+    "our_network20": "AudLang",
+    "hemi": "L"
+  },
+  {
+    "id": 76,
+    "label": "A22c_R",
+    "subregion": "A22c",
+    "region": "STG_R_6_4",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "R"
+  },
+  {
+    "id": 77,
+    "label": "A38l_L",
+    "subregion": "A38l",
+    "region": "STG_L_6_5",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "L"
+  },
+  {
+    "id": 78,
+    "label": "A38l_R",
+    "subregion": "A38l",
+    "region": "STG_R_6_5",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "R"
+  },
+  {
+    "id": 79,
+    "label": "A22r_L",
+    "subregion": "A22r",
+    "region": "STG_L_6_6",
+    "our_network7": "Default",
+    "our_network20": "AudLang",
+    "hemi": "L"
+  },
+  {
+    "id": 80,
+    "label": "A22r_R",
+    "subregion": "A22r",
+    "region": "STG_R_6_6",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 81,
+    "label": "A21c_L",
+    "subregion": "A21c",
+    "region": "MTG_L_4_1",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 82,
+    "label": "A21c_R",
+    "subregion": "A21c",
+    "region": "MTG_R_4_1",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 83,
+    "label": "A21r_L",
+    "subregion": "A21r",
+    "region": "MTG_L_4_2",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 84,
+    "label": "A21r_R",
+    "subregion": "A21r",
+    "region": "MTG_R_4_2",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 85,
+    "label": "A37dl_L",
+    "subregion": "A37dl",
+    "region": "MTG_L_4_3",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 86,
+    "label": "A37dl_R",
+    "subregion": "A37dl",
+    "region": "MTG_R_4_3",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 87,
+    "label": "aSTS_L",
+    "subregion": "aSTS",
+    "region": "MTG_L_4_4",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 88,
+    "label": "aSTS_R",
+    "subregion": "aSTS",
+    "region": "MTG_R_4_4",
+    "our_network7": "Default",
+    "our_network20": "AudLang",
+    "hemi": "R"
+  },
+  {
+    "id": 89,
+    "label": "A20iv_L",
+    "subregion": "A20iv",
+    "region": "ITG_L_7_1",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "L"
+  },
+  {
+    "id": 90,
+    "label": "A20iv_R",
+    "subregion": "A20iv",
+    "region": "ITG_R_7_1",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "R"
+  },
+  {
+    "id": 91,
+    "label": "A37elv_L",
+    "subregion": "A37elv",
+    "region": "ITG_L_7_2",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 92,
+    "label": "A37elv_R",
+    "subregion": "A37elv",
+    "region": "ITG_R_7_2",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 93,
+    "label": "A20r_L",
+    "subregion": "A20r",
+    "region": "ITG_L_7_3",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "L"
+  },
+  {
+    "id": 94,
+    "label": "A20r_R",
+    "subregion": "A20r",
+    "region": "ITG_R_7_3",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "R"
+  },
+  {
+    "id": 95,
+    "label": "A20il_L",
+    "subregion": "A20il",
+    "region": "ITG_L_7_4",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 96,
+    "label": "A20il_R",
+    "subregion": "A20il",
+    "region": "ITG_R_7_4",
+    "our_network7": "Limbic",
+    "our_network20": "DMN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 97,
+    "label": "A37vl_L",
+    "subregion": "A37vl",
+    "region": "ITG_L_7_5",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "FPN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 98,
+    "label": "A37vl_R",
+    "subregion": "A37vl",
+    "region": "ITG_R_7_5",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 99,
+    "label": "A20cl_L",
+    "subregion": "A20cl",
+    "region": "ITG_L_7_6",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "L"
+  },
+  {
+    "id": 100,
+    "label": "A20cl_R",
+    "subregion": "A20cl",
+    "region": "ITG_R_7_6",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 101,
+    "label": "A20cv_L",
+    "subregion": "A20cv",
+    "region": "ITG_L_7_7",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "L"
+  },
+  {
+    "id": 102,
+    "label": "A20cv_R",
+    "subregion": "A20cv",
+    "region": "ITG_R_7_7",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "R"
+  },
+  {
+    "id": 103,
+    "label": "A20rv_L",
+    "subregion": "A20rv",
+    "region": "FuG_L_3_1",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "L"
+  },
+  {
+    "id": 104,
+    "label": "A20rv_R",
+    "subregion": "A20rv",
+    "region": "FuG_R_3_1",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "R"
+  },
+  {
+    "id": 105,
+    "label": "A37mv_L",
+    "subregion": "A37mv",
+    "region": "FuG_L_3_2",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "L"
+  },
+  {
+    "id": 106,
+    "label": "A37mv_R",
+    "subregion": "A37mv",
+    "region": "FuG_R_3_2",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "R"
+  },
+  {
+    "id": 107,
+    "label": "A37lv_L",
+    "subregion": "A37lv",
+    "region": "FuG_L_3_3",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 108,
+    "label": "A37lv_R",
+    "subregion": "A37lv",
+    "region": "FuG_R_3_3",
+    "our_network7": "Visual",
+    "our_network20": "DorsAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 109,
+    "label": "A35/36r_L",
+    "subregion": "A35/36r",
+    "region": "PhG_L_6_1",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "L"
+  },
+  {
+    "id": 110,
+    "label": "A35/36r_R",
+    "subregion": "A35/36r",
+    "region": "PhG_R_6_1",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "R"
+  },
+  {
+    "id": 111,
+    "label": "A35/36c_L",
+    "subregion": "A35/36c",
+    "region": "PhG_L_6_2",
+    "our_network7": "Limbic",
+    "our_network20": "DMN-3",
+    "hemi": "L"
+  },
+  {
+    "id": 112,
+    "label": "A35/36c_R",
+    "subregion": "A35/36c",
+    "region": "PhG_R_6_2",
+    "our_network7": "Visual",
+    "our_network20": "DMN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 113,
+    "label": "TL_L",
+    "subregion": "TL",
+    "region": "PhG_L_6_3",
+    "our_network7": "Visual",
+    "our_network20": "DMN-3",
+    "hemi": "L"
+  },
+  {
+    "id": 114,
+    "label": "TL_R",
+    "subregion": "TL",
+    "region": "PhG_R_6_3",
+    "our_network7": "Visual",
+    "our_network20": "DMN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 115,
+    "label": "A28/34_L",
+    "subregion": "A28/34",
+    "region": "PhG_L_6_4",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "L"
+  },
+  {
+    "id": 116,
+    "label": "A28/34_R",
+    "subregion": "A28/34",
+    "region": "PhG_R_6_4",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "R"
+  },
+  {
+    "id": 117,
+    "label": "TI_L",
+    "subregion": "TI",
+    "region": "PhG_L_6_5",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "L"
+  },
+  {
+    "id": 118,
+    "label": "TI_R",
+    "subregion": "TI",
+    "region": "PhG_R_6_5",
+    "our_network7": "Limbic",
+    "our_network20": "Limbic-2",
+    "hemi": "R"
+  },
+  {
+    "id": 119,
+    "label": "TH_L",
+    "subregion": "TH",
+    "region": "PhG_L_6_6",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "L"
+  },
+  {
+    "id": 120,
+    "label": "TH_R",
+    "subregion": "TH",
+    "region": "PhG_R_6_6",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "R"
+  },
+  {
+    "id": 121,
+    "label": "rpSTS_L",
+    "subregion": "rpSTS",
+    "region": "pSTS_L_2_1",
+    "our_network7": "Default",
+    "our_network20": "AudLang",
+    "hemi": "L"
+  },
+  {
+    "id": 122,
+    "label": "rpSTS_R",
+    "subregion": "rpSTS",
+    "region": "pSTS_R_2_1",
+    "our_network7": "Default",
+    "our_network20": "AudLang",
+    "hemi": "R"
+  },
+  {
+    "id": 123,
+    "label": "cpSTS_L",
+    "subregion": "cpSTS",
+    "region": "pSTS_L_2_2",
+    "our_network7": "Ventral Attention",
+    "our_network20": "AudLang",
+    "hemi": "L"
+  },
+  {
+    "id": 124,
+    "label": "cpSTS_R",
+    "subregion": "cpSTS",
+    "region": "pSTS_R_2_2",
+    "our_network7": "Ventral Attention",
+    "our_network20": "AudLang",
+    "hemi": "R"
+  },
+  {
+    "id": 125,
+    "label": "A7r_L",
+    "subregion": "A7r",
+    "region": "SPL_L_5_1",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 126,
+    "label": "A7r_R",
+    "subregion": "A7r",
+    "region": "SPL_R_5_1",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 127,
+    "label": "A7c_L",
+    "subregion": "A7c",
+    "region": "SPL_L_5_2",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 128,
+    "label": "A7c_R",
+    "subregion": "A7c",
+    "region": "SPL_R_5_2",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 129,
+    "label": "A5l_L",
+    "subregion": "A5l",
+    "region": "SPL_L_5_3",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 130,
+    "label": "A5l_R",
+    "subregion": "A5l",
+    "region": "SPL_R_5_3",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 131,
+    "label": "A7pc_L",
+    "subregion": "A7pc",
+    "region": "SPL_L_5_4",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "L"
+  },
+  {
+    "id": 132,
+    "label": "A7pc_R",
+    "subregion": "A7pc",
+    "region": "SPL_R_5_4",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "R"
+  },
+  {
+    "id": 133,
+    "label": "A7ip_L",
+    "subregion": "A7ip",
+    "region": "SPL_L_5_5",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 134,
+    "label": "A7ip_R",
+    "subregion": "A7ip",
+    "region": "SPL_R_5_5",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 135,
+    "label": "A39c_L",
+    "subregion": "A39c",
+    "region": "IPL_L_6_1",
+    "our_network7": "Visual",
+    "our_network20": "DorsAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 136,
+    "label": "A39c_R",
+    "subregion": "A39c",
+    "region": "IPL_R_6_1",
+    "our_network7": "Visual",
+    "our_network20": "DorsAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 137,
+    "label": "A39rd_L",
+    "subregion": "A39rd",
+    "region": "IPL_L_6_2",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 138,
+    "label": "A39rd_R",
+    "subregion": "A39rd",
+    "region": "IPL_R_6_2",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-2",
+    "hemi": "R"
+  },
+  {
+    "id": 139,
+    "label": "A40rd_L",
+    "subregion": "A40rd",
+    "region": "IPL_L_6_3",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 140,
+    "label": "A40rd_R",
+    "subregion": "A40rd",
+    "region": "IPL_R_6_3",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 141,
+    "label": "A40c_L",
+    "subregion": "A40c",
+    "region": "IPL_L_6_4",
+    "our_network7": "Default",
+    "our_network20": "DMN-2",
+    "hemi": "L"
+  },
+  {
+    "id": 142,
+    "label": "A40c_R",
+    "subregion": "A40c",
+    "region": "IPL_R_6_4",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 143,
+    "label": "A39rv_L",
+    "subregion": "A39rv",
+    "region": "IPL_L_6_5",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "AudLang",
+    "hemi": "L"
+  },
+  {
+    "id": 144,
+    "label": "A39rv_R",
+    "subregion": "A39rv",
+    "region": "IPL_R_6_5",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "R"
+  },
+  {
+    "id": 145,
+    "label": "A40rv_L",
+    "subregion": "A40rv",
+    "region": "IPL_L_6_6",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "L"
+  },
+  {
+    "id": 146,
+    "label": "A40rv_R",
+    "subregion": "A40rv",
+    "region": "IPL_R_6_6",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "R"
+  },
+  {
+    "id": 147,
+    "label": "A7m_L",
+    "subregion": "A7m",
+    "region": "PCun_L_4_1",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-1",
+    "hemi": "L"
+  },
+  {
+    "id": 148,
+    "label": "A7m_R",
+    "subregion": "A7m",
+    "region": "PCun_R_4_1",
+    "our_network7": "Frontoparietal",
+    "our_network20": "FPN-1",
+    "hemi": "R"
+  },
+  {
+    "id": 149,
+    "label": "A5m_L",
+    "subregion": "A5m",
+    "region": "PCun_L_4_2",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "L"
+  },
+  {
+    "id": 150,
+    "label": "A5m_R",
+    "subregion": "A5m",
+    "region": "PCun_R_4_2",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 151,
+    "label": "dmPOS_L",
+    "subregion": "dmPOS",
+    "region": "PCun_L_4_3",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "L"
+  },
+  {
+    "id": 152,
+    "label": "dmPOS_R",
+    "subregion": "dmPOS",
+    "region": "PCun_R_4_3",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "R"
+  },
+  {
+    "id": 153,
+    "label": "A31_L",
+    "subregion": "A31",
+    "region": "PCun_L_4_4",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "L"
+  },
+  {
+    "id": 154,
+    "label": "A31_R",
+    "subregion": "A31",
+    "region": "PCun_R_4_4",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "R"
+  },
+  {
+    "id": 155,
+    "label": "A1/2/3ulhf_L",
+    "subregion": "A1/2/3ulhf",
+    "region": "PoG_L_4_1",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "L"
+  },
+  {
+    "id": 156,
+    "label": "A1/2/3ulhf_R",
+    "subregion": "A1/2/3ulhf",
+    "region": "PoG_R_4_1",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "R"
+  },
+  {
+    "id": 157,
+    "label": "A1/2/3tonIa_L",
+    "subregion": "A1/2/3tonIa",
+    "region": "PoG_L_4_2",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "L"
+  },
+  {
+    "id": 158,
+    "label": "A1/2/3tonIa_R",
+    "subregion": "A1/2/3tonIa",
+    "region": "PoG_R_4_2",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "R"
+  },
+  {
+    "id": 159,
+    "label": "A2_L",
+    "subregion": "A2",
+    "region": "PoG_L_4_3",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 160,
+    "label": "A2_R",
+    "subregion": "A2",
+    "region": "PoG_R_4_3",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "R"
+  },
+  {
+    "id": 161,
+    "label": "A1/2/3tru_L",
+    "subregion": "A1/2/3tru",
+    "region": "PoG_L_4_4",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "L"
+  },
+  {
+    "id": 162,
+    "label": "A1/2/3tru_R",
+    "subregion": "A1/2/3tru",
+    "region": "PoG_R_4_4",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-1",
+    "hemi": "R"
+  },
+  {
+    "id": 163,
+    "label": "G_L",
+    "subregion": "G",
+    "region": "INS_L_6_1",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "L"
+  },
+  {
+    "id": 164,
+    "label": "G_R",
+    "subregion": "G",
+    "region": "INS_R_6_1",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "R"
+  },
+  {
+    "id": 165,
+    "label": "vIa_L",
+    "subregion": "vIa",
+    "region": "INS_L_6_2",
+    "our_network7": "nan",
+    "our_network20": "nan",
+    "hemi": "L"
+  },
+  {
+    "id": 166,
+    "label": "vIa_R",
+    "subregion": "vIa",
+    "region": "INS_R_6_2",
+    "our_network7": "Frontoparietal",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 167,
+    "label": "dIa_L",
+    "subregion": "dIa",
+    "region": "INS_L_6_3",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 168,
+    "label": "dIa_R",
+    "subregion": "dIa",
+    "region": "INS_R_6_3",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 169,
+    "label": "vId/vIg_L",
+    "subregion": "vId/vIg",
+    "region": "INS_L_6_4",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 170,
+    "label": "vId/vIg_R",
+    "subregion": "vId/vIg",
+    "region": "INS_R_6_4",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 171,
+    "label": "dIg_L",
+    "subregion": "dIg",
+    "region": "INS_L_6_5",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "L"
+  },
+  {
+    "id": 172,
+    "label": "dIg_R",
+    "subregion": "dIg",
+    "region": "INS_R_6_5",
+    "our_network7": "Somatomotor",
+    "our_network20": "SomMot-2",
+    "hemi": "R"
+  },
+  {
+    "id": 173,
+    "label": "dId_L",
+    "subregion": "dId",
+    "region": "INS_L_6_6",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 174,
+    "label": "dId_R",
+    "subregion": "dId",
+    "region": "INS_R_6_6",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 175,
+    "label": "A23d_L",
+    "subregion": "A23d",
+    "region": "CG_L_7_1",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "L"
+  },
+  {
+    "id": 176,
+    "label": "A23d_R",
+    "subregion": "A23d",
+    "region": "CG_R_7_1",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "R"
+  },
+  {
+    "id": 177,
+    "label": "A24rv_L",
+    "subregion": "A24rv",
+    "region": "CG_L_7_2",
+    "our_network7": "nan",
+    "our_network20": "nan",
+    "hemi": "L"
+  },
+  {
+    "id": 178,
+    "label": "A24rv_R",
+    "subregion": "A24rv",
+    "region": "CG_R_7_2",
+    "our_network7": "nan",
+    "our_network20": "nan",
+    "hemi": "R"
+  },
+  {
+    "id": 179,
+    "label": "A32p_L",
+    "subregion": "A32p",
+    "region": "CG_L_7_3",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "L"
+  },
+  {
+    "id": 180,
+    "label": "A32p_R",
+    "subregion": "A32p",
+    "region": "CG_R_7_3",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "R"
+  },
+  {
+    "id": 181,
+    "label": "A23v_L",
+    "subregion": "A23v",
+    "region": "CG_L_7_4",
+    "our_network7": "Default",
+    "our_network20": "DMN-3",
+    "hemi": "L"
+  },
+  {
+    "id": 182,
+    "label": "A23v_R",
+    "subregion": "A23v",
+    "region": "CG_R_7_4",
+    "our_network7": "Visual",
+    "our_network20": "DMN-3",
+    "hemi": "R"
+  },
+  {
+    "id": 183,
+    "label": "A24cd_L",
+    "subregion": "A24cd",
+    "region": "CG_L_7_5",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 184,
+    "label": "A24cd_R",
+    "subregion": "A24cd",
+    "region": "CG_R_7_5",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 185,
+    "label": "A23c_L",
+    "subregion": "A23c",
+    "region": "CG_L_7_6",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-2",
+    "hemi": "L"
+  },
+  {
+    "id": 186,
+    "label": "A23c_R",
+    "subregion": "A23c",
+    "region": "CG_R_7_6",
+    "our_network7": "Ventral Attention",
+    "our_network20": "SalVentAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 187,
+    "label": "A32sg_L",
+    "subregion": "A32sg",
+    "region": "CG_L_7_7",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "L"
+  },
+  {
+    "id": 188,
+    "label": "A32sg_R",
+    "subregion": "A32sg",
+    "region": "CG_R_7_7",
+    "our_network7": "Default",
+    "our_network20": "DMN-1",
+    "hemi": "R"
+  },
+  {
+    "id": 189,
+    "label": "cLinG_L",
+    "subregion": "cLinG",
+    "region": "MVOcC_L_5_1",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "L"
+  },
+  {
+    "id": 190,
+    "label": "cLinG_R",
+    "subregion": "cLinG",
+    "region": "MVOcC_R_5_1",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "R"
+  },
+  {
+    "id": 191,
+    "label": "rCunG_L",
+    "subregion": "rCunG",
+    "region": "MVOcC_L_5_2",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "L"
+  },
+  {
+    "id": 192,
+    "label": "rCunG_R",
+    "subregion": "rCunG",
+    "region": "MVOcC_R_5_2",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "R"
+  },
+  {
+    "id": 193,
+    "label": "cCunG_L",
+    "subregion": "cCunG",
+    "region": "MVOcC_L_5_3",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "L"
+  },
+  {
+    "id": 194,
+    "label": "cCunG_R",
+    "subregion": "cCunG",
+    "region": "MVOcC_R_5_3",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "R"
+  },
+  {
+    "id": 195,
+    "label": "rLinG_L",
+    "subregion": "rLinG",
+    "region": "MVOcC_L_5_4",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "L"
+  },
+  {
+    "id": 196,
+    "label": "rLinG_R",
+    "subregion": "rLinG",
+    "region": "MVOcC_R_5_4",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "R"
+  },
+  {
+    "id": 197,
+    "label": "vmPOS_L",
+    "subregion": "vmPOS",
+    "region": "MVOcC_L_5_5",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "L"
+  },
+  {
+    "id": 198,
+    "label": "vmPOS_R",
+    "subregion": "vmPOS",
+    "region": "MVOcC_R_5_5",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "R"
+  },
+  {
+    "id": 199,
+    "label": "mOccG_L",
+    "subregion": "mOccG",
+    "region": "LOcC_L_4_1",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "L"
+  },
+  {
+    "id": 200,
+    "label": "mOccG_R",
+    "subregion": "mOccG",
+    "region": "LOcC_R_4_1",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "R"
+  },
+  {
+    "id": 201,
+    "label": "V5/MT+_L",
+    "subregion": "V5/MT+",
+    "region": "LOcC_L_4_2",
+    "our_network7": "Dorsal Attention",
+    "our_network20": "DorsAttn-1",
+    "hemi": "L"
+  },
+  {
+    "id": 202,
+    "label": "V5/MT+_R",
+    "subregion": "V5/MT+",
+    "region": "LOcC_R_4_2",
+    "our_network7": "Visual",
+    "our_network20": "DorsAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 203,
+    "label": "OPC_L",
+    "subregion": "OPC",
+    "region": "LOcC_L_4_3",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "L"
+  },
+  {
+    "id": 204,
+    "label": "OPC_R",
+    "subregion": "OPC",
+    "region": "LOcC_R_4_3",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "R"
+  },
+  {
+    "id": 205,
+    "label": "iOccG_L",
+    "subregion": "iOccG",
+    "region": "LOcC_L_4_4",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "L"
+  },
+  {
+    "id": 206,
+    "label": "iOccG_R",
+    "subregion": "iOccG",
+    "region": "LOcC_R_4_4",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "R"
+  },
+  {
+    "id": 207,
+    "label": "msOccG_L",
+    "subregion": "msOccG",
+    "region": "LOcC_L_2_1",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "L"
+  },
+  {
+    "id": 208,
+    "label": "msOccG_R",
+    "subregion": "msOccG",
+    "region": "LOcC_R_2_1",
+    "our_network7": "Visual",
+    "our_network20": "VisCent",
+    "hemi": "R"
+  },
+  {
+    "id": 209,
+    "label": "lsOccG_L",
+    "subregion": "lsOccG",
+    "region": "LOcC_L_2_2",
+    "our_network7": "Visual",
+    "our_network20": "VisPeri",
+    "hemi": "L"
+  },
+  {
+    "id": 210,
+    "label": "lsOccG_R",
+    "subregion": "lsOccG",
+    "region": "LOcC_R_2_2",
+    "our_network7": "Visual",
+    "our_network20": "DorsAttn-1",
+    "hemi": "R"
+  },
+  {
+    "id": 211,
+    "label": "mAmyg_L",
+    "subregion": "mAmyg",
+    "region": "Amyg_L_2_1",
+    "our_network7": "nan",
+    "our_network20": "AmyHip",
+    "hemi": "L"
+  },
+  {
+    "id": 212,
+    "label": "mAmyg_R",
+    "subregion": "mAmyg",
+    "region": "Amyg_R_2_1",
+    "our_network7": "nan",
+    "our_network20": "AmyHip",
+    "hemi": "R"
+  },
+  {
+    "id": 213,
+    "label": "lAmyg_L",
+    "subregion": "lAmyg",
+    "region": "Amyg_L_2_2",
+    "our_network7": "nan",
+    "our_network20": "AmyHip",
+    "hemi": "L"
+  },
+  {
+    "id": 214,
+    "label": "lAmyg_R",
+    "subregion": "lAmyg",
+    "region": "Amyg_R_2_2",
+    "our_network7": "nan",
+    "our_network20": "AmyHip",
+    "hemi": "R"
+  },
+  {
+    "id": 215,
+    "label": "rHipp_L",
+    "subregion": "rHipp",
+    "region": "Hipp_L_2_1",
+    "our_network7": "nan",
+    "our_network20": "AmyHip",
+    "hemi": "L"
+  },
+  {
+    "id": 216,
+    "label": "rHipp_R",
+    "subregion": "rHipp",
+    "region": "Hipp_R_2_1",
+    "our_network7": "nan",
+    "our_network20": "AmyHip",
+    "hemi": "R"
+  },
+  {
+    "id": 217,
+    "label": "cHipp_L",
+    "subregion": "cHipp",
+    "region": "Hipp_L_2_2",
+    "our_network7": "nan",
+    "our_network20": "AmyHip",
+    "hemi": "L"
+  },
+  {
+    "id": 218,
+    "label": "cHipp_R",
+    "subregion": "cHipp",
+    "region": "Hipp_R_2_2",
+    "our_network7": "nan",
+    "our_network20": "AmyHip",
+    "hemi": "R"
+  },
+  {
+    "id": 219,
+    "label": "vCa_L",
+    "subregion": "vCa",
+    "region": "BG_L_6_1",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "L"
+  },
+  {
+    "id": 220,
+    "label": "vCa_R",
+    "subregion": "vCa",
+    "region": "BG_R_6_1",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "R"
+  },
+  {
+    "id": 221,
+    "label": "GP_L",
+    "subregion": "GP",
+    "region": "BG_L_6_2",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "L"
+  },
+  {
+    "id": 222,
+    "label": "GP_R",
+    "subregion": "GP",
+    "region": "BG_R_6_2",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "R"
+  },
+  {
+    "id": 223,
+    "label": "NAC_L",
+    "subregion": "NAC",
+    "region": "BG_L_6_3",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "L"
+  },
+  {
+    "id": 224,
+    "label": "NAC_R",
+    "subregion": "NAC",
+    "region": "BG_R_6_3",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "R"
+  },
+  {
+    "id": 225,
+    "label": "vmPu_L",
+    "subregion": "vmPu",
+    "region": "BG_L_6_4",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "L"
+  },
+  {
+    "id": 226,
+    "label": "vmPu_R",
+    "subregion": "vmPu",
+    "region": "BG_R_6_4",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "R"
+  },
+  {
+    "id": 227,
+    "label": "dCa_L",
+    "subregion": "dCa",
+    "region": "BG_L_6_5",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "L"
+  },
+  {
+    "id": 228,
+    "label": "dCa_R",
+    "subregion": "dCa",
+    "region": "BG_R_6_5",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "R"
+  },
+  {
+    "id": 229,
+    "label": "dlPu_L",
+    "subregion": "dlPu",
+    "region": "BG_L_6_6",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "L"
+  },
+  {
+    "id": 230,
+    "label": "dlPu_R",
+    "subregion": "dlPu",
+    "region": "BG_R_6_6",
+    "our_network7": "nan",
+    "our_network20": "Striatum",
+    "hemi": "R"
+  },
+  {
+    "id": 231,
+    "label": "mPFtha_L",
+    "subregion": "mPFtha",
+    "region": "Tha_L_8_1",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "L"
+  },
+  {
+    "id": 232,
+    "label": "mPFtha_R",
+    "subregion": "mPFtha",
+    "region": "Tha_R_8_1",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "R"
+  },
+  {
+    "id": 233,
+    "label": "mPMtha_L",
+    "subregion": "mPMtha",
+    "region": "Tha_L_8_2",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "L"
+  },
+  {
+    "id": 234,
+    "label": "mPMtha_R",
+    "subregion": "mPMtha",
+    "region": "Tha_R_8_2",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "R"
+  },
+  {
+    "id": 235,
+    "label": "Stha_L",
+    "subregion": "Stha",
+    "region": "Tha_L_8_3",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "L"
+  },
+  {
+    "id": 236,
+    "label": "Stha_R",
+    "subregion": "Stha",
+    "region": "Tha_R_8_3",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "R"
+  },
+  {
+    "id": 237,
+    "label": "rTtha_L",
+    "subregion": "rTtha",
+    "region": "Tha_L_8_4",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "L"
+  },
+  {
+    "id": 238,
+    "label": "rTtha_R",
+    "subregion": "rTtha",
+    "region": "Tha_R_8_4",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "R"
+  },
+  {
+    "id": 239,
+    "label": "PPtha_L",
+    "subregion": "PPtha",
+    "region": "Tha_L_8_5",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "L"
+  },
+  {
+    "id": 240,
+    "label": "PPtha_R",
+    "subregion": "PPtha",
+    "region": "Tha_R_8_5",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "R"
+  },
+  {
+    "id": 241,
+    "label": "Otha_L",
+    "subregion": "Otha",
+    "region": "Tha_L_8_6",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "L"
+  },
+  {
+    "id": 242,
+    "label": "Otha_R",
+    "subregion": "Otha",
+    "region": "Tha_R_8_6",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "R"
+  },
+  {
+    "id": 243,
+    "label": "cTtha_L",
+    "subregion": "cTtha",
+    "region": "Tha_L_8_7",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "L"
+  },
+  {
+    "id": 244,
+    "label": "cTtha_R",
+    "subregion": "cTtha",
+    "region": "Tha_R_8_7",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "R"
+  },
+  {
+    "id": 245,
+    "label": "lPFtha_L",
+    "subregion": "lPFtha",
+    "region": "Tha_L_8_8",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "L"
+  },
+  {
+    "id": 246,
+    "label": "lPFtha_R",
+    "subregion": "lPFtha",
+    "region": "Tha_R_8_8",
+    "our_network7": "nan",
+    "our_network20": "Thalamus",
+    "hemi": "R"
+  }
+]
