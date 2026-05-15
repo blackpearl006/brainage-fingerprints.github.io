@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/brainage-fingerprints.github.io/",
+  base: "/",
   build: {
     chunkSizeWarningLimit: 1500,
   },
