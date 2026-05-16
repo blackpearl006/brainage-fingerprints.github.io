@@ -3,7 +3,7 @@ import Section from "../components/Section";
 const LINKS = [
   { label: "Preprint",          href: "#", desc: "arXiv (coming soon)",                       icon: "📄" },
   { label: "GitHub",            href: "#", desc: "Training code + IG pipeline",               icon: "⌥" },
-  { label: "Model Weights",     href: "#", desc: "Zenodo — 50 SFCN checkpoints",             icon: "⬇" },
+  { label: "Model Weights",     href: "#", desc: "Zenodo — 100 SFCN checkpoints",            icon: "⬇" },
   { label: "Processed Data",    href: "#", desc: "ROI attribution CSVs (Zenodo)",             icon: "📊" },
 ];
 

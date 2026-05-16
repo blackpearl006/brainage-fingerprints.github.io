@@ -83,6 +83,7 @@ export default function FilterBar({
   threshold, setThreshold,
   view, setView,
   showAll, setShowAll,
+  isMobile = false,
 }) {
   const [open, setOpen] = useState(null); // 'analysis' | 'cohorts' | 'threshold' | 'view' | 'options'
   const barRef = useRef(null);
@@ -153,20 +154,24 @@ export default function FilterBar({
           <span className="opacity-50 text-[10px]">▾</span>
         </button>
 
-        <button className={`${btnBase} ${open === "view" ? btnActive : btnInactive}`} onClick={() => toggle("view")}>
-          <span>{viewObj?.icon}</span>
-          <span className="font-semibold">{viewObj?.label}</span>
-          <span className="opacity-50 text-[10px]">▾</span>
-        </button>
+        {!isMobile && (
+          <button className={`${btnBase} ${open === "view" ? btnActive : btnInactive}`} onClick={() => toggle("view")}>
+            <span>{viewObj?.icon}</span>
+            <span className="font-semibold">{viewObj?.label}</span>
+            <span className="opacity-50 text-[10px]">▾</span>
+          </button>
+        )}
 
-        <button className={`${btnBase} ${open === "options" ? btnActive : btnInactive}`} onClick={() => toggle("options")}>
-          <span>⚙</span>
-          <span className="font-semibold">Options</span>
-          <span className="opacity-50 text-[10px]">▾</span>
-        </button>
+        {!isMobile && (
+          <button className={`${btnBase} ${open === "options" ? btnActive : btnInactive}`} onClick={() => toggle("options")}>
+            <span>⚙</span>
+            <span className="font-semibold">Options</span>
+            <span className="opacity-50 text-[10px]">▾</span>
+          </button>
+        )}
 
-        {/* Quick badges */}
-        {selectedCohorts.length > 1 && (
+        {/* Quick badges — desktop only */}
+        {!isMobile && selectedCohorts.length > 1 && (
           <div className="flex items-center gap-1 ml-1">
             {selectedCohorts.map(c => (
               <button
@@ -210,34 +215,38 @@ export default function FilterBar({
             ))}
           </div>
 
-          {/* Individual checkboxes */}
-          <p className="font-sans text-[10px] font-semibold text-ink2 uppercase tracking-wider mb-2">Individual cohorts</p>
-          <div className="grid grid-cols-2 gap-1.5">
-            {Object.entries(COHORT_INFO).map(([key, info]) => {
-              const checked = selectedCohorts.includes(key);
-              return (
-                <button
-                  key={key}
-                  onClick={() => toggleCohort(key)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors text-left ${
-                    checked ? "bg-ink text-paper border-ink" : "border-rule/30 text-ink2 hover:border-ink/40 hover:text-ink bg-paper2"
-                  }`}
-                >
-                  <span className={`w-3.5 h-3.5 rounded flex-shrink-0 border flex items-center justify-center ${
-                    checked ? "bg-paper border-paper" : "border-ink2/40"
-                  }`}>
-                    {checked && <span className="text-ink text-[8px] font-bold leading-none">✓</span>}
-                  </span>
-                  <span className="font-mono text-xs flex-1">
-                    <span className="font-semibold block">{info.label}</span>
-                    <span className={`text-[10px] px-1 py-0.5 rounded ${ancestryColors[info.ancestry]} ${checked ? "opacity-80" : ""}`}>
-                      {info.region}
-                    </span>
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+          {/* Individual checkboxes — desktop only */}
+          {!isMobile && (
+            <>
+              <p className="font-sans text-[10px] font-semibold text-ink2 uppercase tracking-wider mb-2">Individual cohorts</p>
+              <div className="grid grid-cols-2 gap-1.5">
+                {Object.entries(COHORT_INFO).map(([key, info]) => {
+                  const checked = selectedCohorts.includes(key);
+                  return (
+                    <button
+                      key={key}
+                      onClick={() => toggleCohort(key)}
+                      className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors text-left ${
+                        checked ? "bg-ink text-paper border-ink" : "border-rule/30 text-ink2 hover:border-ink/40 hover:text-ink bg-paper2"
+                      }`}
+                    >
+                      <span className={`w-3.5 h-3.5 rounded flex-shrink-0 border flex items-center justify-center ${
+                        checked ? "bg-paper border-paper" : "border-ink2/40"
+                      }`}>
+                        {checked && <span className="text-ink text-[8px] font-bold leading-none">✓</span>}
+                      </span>
+                      <span className="font-mono text-xs flex-1">
+                        <span className="font-semibold block">{info.label}</span>
+                        <span className={`text-[10px] px-1 py-0.5 rounded ${ancestryColors[info.ancestry]} ${checked ? "opacity-80" : ""}`}>
+                          {info.region}
+                        </span>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </>
+          )}
 
           {selectedCohorts.length > 1 && (
             <p className="mt-3 font-mono text-[11px] text-sig font-semibold">

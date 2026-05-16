@@ -5,6 +5,7 @@ import ROITable from "../components/ROITable";
 import GlassBrain from "../components/GlassBrain";
 import { loadRegions, loadFingerprintAnalysis, byId } from "../lib/data";
 import NetworkRadar from "../components/NetworkRadar";
+import { useIsMobile } from "../lib/useIsMobile";
 
 const BrainnetomeAtlas = lazy(() => import("../components/BrainnetomeAtlas"));
 
@@ -98,7 +99,36 @@ function Atlas3D({ counts, sig, regions, numCohorts, height = 500 }) {
   );
 }
 
-function ContentView({ view, counts, sig, regions, analysis, selectedCohorts, threshold, numCohorts, showAll, analysisData }) {
+function MobileView({ counts, sig, regions, numCohorts, analysisData, selectedCohorts, threshold }) {
+  const [showRadar, setShowRadar] = useState(false);
+  return (
+    <div className="w-full">
+      <Atlas3D counts={counts} sig={sig} regions={regions} numCohorts={numCohorts} height={420}/>
+      <button
+        onClick={() => setShowRadar(s => !s)}
+        className="mt-3 w-full flex items-center justify-between px-4 py-2.5 rounded-xl border border-rule/20 bg-paper2 font-mono text-xs text-ink2 hover:text-ink transition-colors"
+      >
+        <span>Network Radar</span>
+        <span className="text-[10px] opacity-60">{showRadar ? "▲ Hide" : "▼ Show"}</span>
+      </button>
+      {showRadar && (
+        <NetworkRadar
+          analysisData={analysisData}
+          selectedCohorts={selectedCohorts}
+          threshold={threshold}
+          regions={regions}
+        />
+      )}
+    </div>
+  );
+}
+
+function ContentView({ view, counts, sig, regions, analysis, selectedCohorts, threshold, numCohorts, showAll, analysisData, isMobile }) {
+  // On mobile always show 3D; network radar collapsed behind a toggle
+  if (isMobile) {
+    return <MobileView counts={counts} sig={sig} regions={regions} numCohorts={numCohorts} analysisData={analysisData} selectedCohorts={selectedCohorts} threshold={threshold}/>;
+  }
+
   if (view === "table") {
     return <ROITable regions={regions} counts={counts} sig={sig} showAll={showAll} numCohorts={numCohorts}/>;
   }
@@ -139,6 +169,7 @@ function ContentView({ view, counts, sig, regions, analysis, selectedCohorts, th
 // ── Main component ─────────────────────────────────────────────────────────────
 
 export default function Playground() {
+  const isMobile = useIsMobile();
   const [analysis,          setAnalysis]          = useState(DEFAULT_STATE.analysis);
   const [selectedCohorts,   setSelectedCohorts]   = useState(DEFAULT_STATE.selectedCohorts);
   const [threshold,         setThreshold]         = useState(DEFAULT_STATE.threshold);
@@ -234,6 +265,7 @@ export default function Playground() {
         threshold={threshold}             setThreshold={setThreshold}
         view={view}                       setView={setView}
         showAll={showAll}                 setShowAll={setShowAll}
+        isMobile={isMobile}
       />
 
       {/* Result panel */}
@@ -273,10 +305,12 @@ export default function Playground() {
             <span className="font-mono text-[10px] text-ink2">ROIs</span>
           </div>
 
-          {/* Threshold badge */}
-          <span className="font-mono text-[10px] px-2.5 py-1.5 rounded-lg bg-paper2 border border-rule/20 text-ink2">
-            {THRESHOLD_LABELS[threshold]}
-          </span>
+          {/* Threshold badge — desktop only */}
+          {!isMobile && (
+            <span className="font-mono text-[10px] px-2.5 py-1.5 rounded-lg bg-paper2 border border-rule/20 text-ink2">
+              {THRESHOLD_LABELS[threshold]}
+            </span>
+          )}
 
           {/* Reset button */}
           <button
@@ -303,6 +337,7 @@ export default function Playground() {
             analysis={analysis} selectedCohorts={selectedCohorts}
             threshold={threshold} numCohorts={numCohorts} showAll={showAll}
             analysisData={fingerprintCache[analysis]}
+            isMobile={isMobile}
           />
         </div>
       </div>

@@ -191,13 +191,13 @@ export default function BrainnetomeAtlas({ counts, sig, regions, height = 500, n
   return (
     <div
       ref={containerRef}
-      className="relative rounded-xl overflow-hidden select-none"
+      className="relative w-full rounded-xl overflow-hidden select-none"
       style={{ background: BG, height: effectiveHeight }}
     >
       <Canvas
         camera={{ position: [0, 30, 340], fov: 38 }}
         gl={{ antialias: true, alpha: false }}
-        style={{ background: BG }}
+        style={{ background: BG, width: "100%", height: "100%" }}
       >
         <ambientLight intensity={1.4}/>
         <directionalLight position={[300, 400, 200]} intensity={1.0}/>

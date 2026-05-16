@@ -1,7 +1,8 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Section from "../components/Section";
 import { loadRegions, loadFingerprintAnalysis, byId } from "../lib/data";
 import { networkColors } from "../lib/theme";
+import { useIsMobile } from "../lib/useIsMobile";
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
@@ -233,8 +234,9 @@ function ComparePanel({ keyA, keyB, sigA, sigB, regions }) {
 
 // ── TAB 2: Dataset-specific ROIs ──────────────────────────────────────────────
 
-function DatasetSpecificView({ allData, threshold, regions }) {
+function DatasetSpecificView({ allData, threshold, regions, isMobile }) {
   const [analysis, setAnalysis] = useState("main");
+  const [showCards, setShowCards] = useState(!isMobile);
 
   const { univSig, cohortSpecific } = useMemo(() => {
     const data = allData[analysis];
@@ -284,10 +286,18 @@ function DatasetSpecificView({ allData, threshold, regions }) {
       ) : (
         <>
           {/* Per-cohort dataset-specific ROIs */}
-          <p className="font-mono text-[11px] text-ink2 uppercase tracking-wider mb-3">
-            Dataset-specific — significant in this cohort but not in all 8 cohorts
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <button
+            onClick={() => setShowCards(s => !s)}
+            className="w-full flex items-center justify-between mb-3 group"
+          >
+            <p className="font-mono text-[11px] text-ink2 uppercase tracking-wider">
+              Dataset-specific — significant in this cohort but not in all 8 cohorts
+            </p>
+            <span className="font-mono text-[10px] text-ink2 group-hover:text-ink ml-2 shrink-0">
+              {showCards ? "▲ Hide" : "▼ Show"}
+            </span>
+          </button>
+          {showCards && <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {ALL_COHORTS.map(cohort => {
               const ids = cohortSpecific[cohort] ?? [];
               const color = COHORT_COLORS[cohort];
@@ -314,7 +324,7 @@ function DatasetSpecificView({ allData, threshold, regions }) {
                 </div>
               );
             })}
-          </div>
+          </div>}
         </>
       )}
     </div>
@@ -324,6 +334,7 @@ function DatasetSpecificView({ allData, threshold, regions }) {
 // ── Main component ─────────────────────────────────────────────────────────────
 
 export default function Comparisons() {
+  const isMobile = useIsMobile();
   const [tab,       setTab]       = useState("cross");
   const [threshold, setThreshold] = useState("top_20_perc_rois");
   const [allData,   setAllData]   = useState({});
@@ -376,31 +387,33 @@ export default function Comparisons() {
       title="Cross-Analysis Comparisons"
       lede="How similar are universal brain-age fingerprints across study configurations, and which ROIs are specific to each dataset within a configuration?"
     >
-      {/* Tab switcher */}
-      <div className="flex gap-1 mb-6 border-b border-rule/20">
-        {[
-          { key: "cross",   label: "Cross-Analysis Similarity" },
-          { key: "dataset", label: "Dataset-Specific ROIs"     },
-        ].map(({ key, label }) => (
-          <button
-            key={key}
-            onClick={() => setTab(key)}
-            className={`font-mono text-[11px] px-4 py-2.5 border-b-2 -mb-px transition-colors ${
-              tab === key
-                ? "border-sig text-ink font-semibold"
-                : "border-transparent text-ink2 hover:text-ink"
-            }`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+      {/* Tab switcher — desktop only */}
+      {!isMobile && (
+        <div className="flex gap-1 mb-6 border-b border-rule/20">
+          {[
+            { key: "cross",   label: "Cross-Analysis Similarity" },
+            { key: "dataset", label: "Dataset-Specific ROIs"     },
+          ].map(({ key, label }) => (
+            <button
+              key={key}
+              onClick={() => setTab(key)}
+              className={`font-mono text-[11px] px-4 py-2.5 border-b-2 -mb-px transition-colors ${
+                tab === key
+                  ? "border-sig text-ink font-semibold"
+                  : "border-transparent text-ink2 hover:text-ink"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Shared threshold + loading */}
       <Controls threshold={threshold} setThreshold={setThreshold} loaded={loaded} total={ANALYSES.length}/>
 
       {/* Tab content */}
-      {tab === "cross" ? (
+      {!isMobile && tab === "cross" ? (
         <>
           <div className="rounded-xl border border-rule/20 p-5 bg-paper overflow-x-auto">
             <Heatmap
@@ -431,7 +444,7 @@ export default function Comparisons() {
           )}
         </>
       ) : (
-        <DatasetSpecificView allData={allData} threshold={threshold} regions={regions}/>
+        <DatasetSpecificView allData={allData} threshold={threshold} regions={regions} isMobile={isMobile}/>
       )}
     </Section>
   );
