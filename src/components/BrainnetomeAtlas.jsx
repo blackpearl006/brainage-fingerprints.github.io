@@ -9,10 +9,8 @@ useGLTF.preload(`${import.meta.env.BASE_URL}assets/meshes/atlas.glb`);
 const BG = "#141E2D";
 
 function makeStdMat(color) {
-  return new THREE.MeshStandardMaterial({
+  return new THREE.MeshBasicMaterial({
     color: new THREE.Color(color),
-    roughness: 0.55,
-    metalness: 0.05,
     transparent: false,
     depthWrite: true,
   });
@@ -257,7 +255,7 @@ export default function BrainnetomeAtlas({ counts, sig, regions, height = 500, n
       </div>
 
       {/* ── Bottom controls row ── */}
-      <div className="absolute bottom-3 left-3 right-3 flex items-end gap-3">
+      <div className="absolute bottom-3 left-3 right-3 flex flex-wrap items-end gap-2">
         {/* Legend */}
         <div className="flex-1">
           {colorMode === "count" ? (
@@ -288,7 +286,7 @@ export default function BrainnetomeAtlas({ counts, sig, regions, height = 500, n
             type="range" min={0} max={0.6} step={0.02}
             value={shellOpacity}
             onChange={e => setShellOpacity(parseFloat(e.target.value))}
-            className="w-16 cursor-pointer"
+            className="w-12 cursor-pointer"
             style={{ accentColor: "#C8312B" }}
           />
           <span className="font-mono text-[10px] text-paper/40 w-6 text-right">{Math.round(shellOpacity * 100)}%</span>
