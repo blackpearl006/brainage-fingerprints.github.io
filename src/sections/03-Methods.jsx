@@ -12,8 +12,8 @@ const STEPS = [
   },
   {
     n: "02",
-    title: "SFCN ensemble (100 models)",
-    body: "Simple Fully Convolutional Network trained with 5-fold cross-validation × 20 repeats. LRD (Linear Regression Debiasing) applied post-hoc to correct age-bias in the brain-age gap.",
+    title: "SFCN training",
+    body: "Simple Fully Convolutional Network trained on each cohort with a single 5-fold cross-validation pass. Five models per cohort, one held-out fold per subject.",
   },
   {
     n: "03",
@@ -22,8 +22,8 @@ const STEPS = [
   },
   {
     n: "04",
-    title: "Ensemble averaging",
-    body: "Predictions from all 100 models (5 folds × 20 repeats) are averaged per subject. The cohort-level signal — used downstream to rank anatomical regions — is built on this stabilised forward output rather than any single network run.",
+    title: "Out-of-fold prediction · LRD correction",
+    body: "Every subject's brain age is the output of the single SFCN model trained on the four folds that exclude them — no averaging across folds. Linear Regression Debiasing (LRD) is then applied post-hoc to remove age-bias in the brain-age gap.",
   },
 ];
 
