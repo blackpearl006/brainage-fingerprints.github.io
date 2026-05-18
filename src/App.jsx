@@ -3,6 +3,7 @@ import Abstract   from "./sections/01-Abstract";
 import Playground from "./sections/02-Playground";
 import Comparisons from "./sections/03-Comparisons";
 import Methods    from "./sections/03-Methods";
+import Preprocessing from "./sections/04-Preprocessing";
 import Resources  from "./sections/04-Resources";
 
 const HR = () => (
@@ -21,6 +22,8 @@ export default function App() {
       <Comparisons/>
       <HR/>
       <Methods/>
+      <HR/>
+      <Preprocessing/>
       <HR/>
       <Resources/>
       <footer className="py-12 text-center font-mono text-xs text-ink2 border-t border-rule/20 mt-8">

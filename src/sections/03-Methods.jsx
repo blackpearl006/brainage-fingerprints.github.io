@@ -1,5 +1,8 @@
+import { lazy, Suspense } from "react";
 import Section from "../components/Section";
 import ReadMore from "../components/ReadMore";
+
+const SFCNExplainer = lazy(() => import("../components/SFCNExplainer"));
 
 const STEPS = [
   {
@@ -14,13 +17,13 @@ const STEPS = [
   },
   {
     n: "03",
-    title: "Integrated Gradients attribution",
-    body: "IG attributes each voxel's contribution to the predicted brain age, using a zero-filled (black) baseline. Attributions are sign-preserved and averaged across the 100-model ensemble per subject.",
+    title: "Forward propagation",
+    body: "Each preprocessed volume is passed through six 3D-convolution blocks (k=3, ×5 + k=1, ×1) interleaved with batch-norm, ReLU and max-pool. Adaptive average-pooling collapses the final 2×3×2×64 feature map to a 64-dim vector, then a 1×1×1 convolution head outputs the predicted age.",
   },
   {
     n: "04",
-    title: "ROI aggregation & binomial test",
-    body: "Voxel attributions are summed within each of 246 Brainnetome ROIs and ranked per subject. An ROI is counted if it falls in the top-N% of a subject's attribution map. A binomial test determines whether the cohort-level count exceeds chance.",
+    title: "Ensemble averaging",
+    body: "Predictions from all 100 models (5 folds × 20 repeats) are averaged per subject. The cohort-level signal — used downstream to rank anatomical regions — is built on this stabilised forward output rather than any single network run.",
   },
 ];
 
@@ -28,10 +31,18 @@ export default function Methods() {
   return (
     <Section
       eyebrow="Methods"
-      title="Integrated Gradients pipeline"
-      lede="A four-step pipeline attributes brain-age predictions to anatomical ROIs, producing statistically tested fingerprints per cohort and analysis configuration."
+      title="Forward propagation"
+      lede="How each preprocessed T1-MRI volume flows through the SFCN ensemble — from raw voxels to a single brain-age estimate, layer by layer."
     >
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
+      <Suspense fallback={
+        <div className="h-48 mt-6 rounded-xl bg-ink/5 border border-rule/20 flex items-center justify-center">
+          <span className="font-mono text-xs text-ink2">Loading interactive diagram…</span>
+        </div>
+      }>
+        <SFCNExplainer/>
+      </Suspense>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
         {STEPS.map(s => (
           <div key={s.n} className="bg-paper2 rounded-xl p-5 border border-rule/20">
             <p className="font-mono text-xs text-ink2 mb-2">Step {s.n}</p>

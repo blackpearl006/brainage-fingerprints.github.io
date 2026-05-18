@@ -46,7 +46,11 @@ function Panel({ title, children, onClose }) {
     <div className="bg-paper border border-rule/30 rounded-xl shadow-xl p-4 mt-1">
       <div className="flex justify-between items-center mb-3">
         <p className="font-sans text-xs font-bold text-ink uppercase tracking-widest">{title}</p>
-        <button onClick={onClose} className="font-mono text-xs text-ink2 hover:text-ink leading-none px-1">✕</button>
+        <button
+          onClick={onClose}
+          aria-label="Close panel"
+          title="Close"
+          className="font-mono text-xs text-ink2 hover:text-ink leading-none px-1">✕</button>
       </div>
       {children}
     </div>
