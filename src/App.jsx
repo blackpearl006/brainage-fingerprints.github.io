@@ -5,6 +5,7 @@ import Comparisons from "./sections/03-Comparisons";
 import Methods    from "./sections/03-Methods";
 import Preprocessing from "./sections/04-Preprocessing";
 import Resources  from "./sections/04-Resources";
+import FontSizeControl from "./components/FontSizeControl";
 
 const HR = () => (
   <hr className="border-rule/20 max-w-wide mx-auto px-6"/>
@@ -13,6 +14,7 @@ const HR = () => (
 export default function App() {
   return (
     <main>
+      <FontSizeControl/>
       <Hero/>
       <HR/>
       <Abstract/>

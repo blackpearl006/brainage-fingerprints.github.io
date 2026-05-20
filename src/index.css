@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  /* Larger default base size — Tailwind text-* utilities scale from this.
+     Reader-friendly for a 40+ academic / clinician audience. */
+  html { font-size: 18px; }
+  html[data-fontscale="sm"] { font-size: 16px; }
+  html[data-fontscale="md"] { font-size: 18px; }
+  html[data-fontscale="lg"] { font-size: 20px; }
+  html[data-fontscale="xl"] { font-size: 22px; }
+
   body {
     @apply bg-paper text-ink font-serif;
   }
